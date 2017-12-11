@@ -1,0 +1,14 @@
+language: bash
+sudo: required
+dist: trusty
+
+services:
+- docker
+
+script:
+- docker build --no-cache -t engapa/modeldb-frontend:latest -t engapa/modeldb-frontend:latest-dev${TAVIS_BUILD} .
+
+after_success:
+- if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker push engapa/modeldb-frontend:latest;
+  fi
