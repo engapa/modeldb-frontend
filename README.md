@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/engapa/modeldb-frontend.svg)](https://travis-ci.org/engapa/modeldb-frontend)
 # modeldb-frontend
 
 A basic fork of official frontend module of [ModelDB machine learning management system](http://modeldb.csail.mit.edu).
