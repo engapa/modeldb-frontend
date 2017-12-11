@@ -9,6 +9,7 @@ script:
 - docker build --no-cache -t engapa/modeldb-frontend:latest -t engapa/modeldb-frontend:latest-dev${TAVIS_BUILD} .
 
 after_success:
+- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker push engapa/modeldb-frontend:latest;
   fi
