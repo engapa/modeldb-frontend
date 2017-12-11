@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/engapa/modeldb-frontend.svg)](https://travis-ci.org/engapa/modeldb-frontend)
+[![Docker Pulls](https://img.shields.io/docker/pulls/engapa/modeldb-frontend.svg)](https://hub.docker.com/r/engapa/modeldb-frontend/)
+[![Docker Stars](https://img.shields.io/docker/stars/engapa/modeldb-frontend.svg)](https://hub.docker.com/r/engapa/modeldb-frontend/)
+
 # modeldb-frontend
 
 A basic fork of official frontend module of [ModelDB machine learning management system](http://modeldb.csail.mit.edu).
