@@ -41,8 +41,8 @@ function start() {
   node_param=""
   npm_param=""
 
-  if [ -n "$1" ]; then
-    node_param="--host $1"
+  if [ -n "$MDB_BACKEND_HOST" ]; then
+    node_param="--host $MDB_BACKEND_HOST"
     npm_param="-- $node_param"
   fi
 
