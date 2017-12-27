@@ -13,6 +13,7 @@ This project goal is to try to add some personal features :
 
 - [x] Confusion Matrix
 - [ ] Compute resources consumption
+- [ ] OAuth integration
 
 ## Setup
 
