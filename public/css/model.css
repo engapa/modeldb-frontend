@@ -115,12 +115,12 @@
 /*
  * Metrixs
  */
-.nkv.metrixs {
+.nkv.metrixs-cm, .nkv.metrixs-cmm{
   position: relative;
   padding-right: 16px;
 }
 
-.metrixs-open {
+.metrixs-cm-open, .metrixs-cmm-open {
   position: absolute;
   top: 3px;
   right: -1px;
@@ -134,14 +134,18 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
+  cursor: pointer;
 }
-.metrix-open:hover {
+
+.metrixs-cm-open:hover, .metrixs-cmm-open:hover {
   opacity: 1;
 }
-.md-metrixs {
-  height: 400px;
+
+.md-metrixs-cm, .md-metrixs-cmm {
+  height: 440px;
   overflow-y: scroll;
   padding: 5px 10px;
+  background-color: white;
 }
 /*
  * Annotations
@@ -263,6 +267,3 @@ table{
     border-collapse: collapse;
 }
 
-.matrix-view{
-  margin-top:50px;
-}

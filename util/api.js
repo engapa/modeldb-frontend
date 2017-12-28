@@ -42,10 +42,10 @@ function getModel(modelId, callback) {
                 var val = Object.keys(model_metrics[key]).map(function (k) {
                     return model_metrics[key][k]
                 })[0];
+                val = Math.round(parseFloat(val) * 1000) / 1000;
                 if (key.startsWith("_")) {
                     addMetrix(key, val, metrixs)
                 } else {
-                    val = Math.round(parseFloat(val) * 1000) / 1000;
                     metrics.push({
                         "key": key,
                         "val": val
@@ -92,10 +92,10 @@ function getProjectModels(projectId, callback) {
                         var val = Object.keys(model_metrics[key]).map(function (k) {
                             return model_metrics[key][k]
                         })[0];
+                        val = Math.round(parseFloat(val) * 1000) / 1000;
                         if (key.startsWith("_")) {
                             addMetrix(key, val, metrixs)
                         } else {
-                            val = Math.round(parseFloat(val) * 1000) / 1000;
                             metrics.push({
                                 "key": key,
                                 "val": val

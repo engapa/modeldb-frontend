@@ -152,13 +152,29 @@
       </div>
 
       <% if (model["metrixs"] && model["metrixs"]['cm']) { %>
-      <div class="nkv metrixs">
+      <div class="nkv metrixs-cm">
         Confusion Matrix:
-        <div class="metrixs-open md-metrixs-trigger"
+        <div class="metrixs-cm-open md-metrixs-cm-trigger"
           data-modal="modal-2"
           data-id="<%= model.id %>"
           <% for (key in model.metrixs['cm']) { %>
           data-<%= key %>="<%= model.metrixs['cm'][key] %>"
+          <% } %>
+          data-experimentRunId="<%= model["Experiment Run ID"] %>"
+        >
+          [...]
+        </div>
+      </div>
+      <% } %>
+
+      <% if (model["metrixs"] && model["metrixs"]['cmm']) { %>
+      <div class="nkv metrixs-cmm">
+        Compute consumptions:
+        <div class="metrixs-cmm-open md-metrixs-cmm-trigger"
+          data-modal="modal-4"
+          data-id="<%= model.id %>"
+          <% for (key in model.metrixs['cmm']) { %>
+          data-<%= key %>="<%= model.metrixs['cmm'][key] %>"
           <% } %>
           data-experimentRunId="<%= model["Experiment Run ID"] %>"
         >

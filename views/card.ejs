@@ -160,6 +160,19 @@
                       </div>
                     </div>
                   <% } %>
+                   <% if (models[i].metrixs['cmm']) { %>
+                    <div class="nkv metrixs-container popup-container">
+                      <div class="popup-label">Compute Consuptions</div>
+                      <div class="metrixs popup-contents">
+                        <% for (key in  models[i].metrixs['cmm']) { %>
+                          <div class="kv"
+                          >
+                            <%= key %>: <%=models[i].metrixs['cmm'][key] %>
+                          </div>
+                        <% } %>
+                      </div>
+                    </div>
+                  <% } %>
                 </div>
 
               </div>
