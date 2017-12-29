@@ -10,7 +10,7 @@ MDB_BACKEND_HOST=${MDB_BACKEND_HOST:-"localhost"}
 
 MDB_DOCKER_NAME=${MDB_DOCKER_NAME:-"modeldb-frontend"}
 MDB_DOCKER_NAME_TAG=${MDB_DOCKER_NAME_TAG:-"latest"}
-MDB_DOCKER_OPTS=${MDB_DOCKER_OPTS:-"--net=host"}
+MDB_DOCKER_OPTS=${MDB_DOCKER_OPTS:-"-it --net=host"}
 
 function gen() {
 
@@ -85,7 +85,7 @@ function docker-start() {
        MDB_DOCKER_OPTS="${MDB_DOCKER_OPTS} -v $(pwd)/thrift "
     fi
 
-    docker run -it $MDB_DOCKER_OPTS --name $MDB_DOCKER_NAME $MDB_DOCKER_NAME:$MDB_DOCKER_NAME_TAG
+    docker run $MDB_DOCKER_OPTS --name $MDB_DOCKER_NAME $MDB_DOCKER_NAME:$MDB_DOCKER_NAME_TAG
 
 }
 
