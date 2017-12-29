@@ -1,15 +1,27 @@
 language: bash
 sudo: required
 dist: trusty
+env:
+- MDB_WAIT_BACKEND=false
+- MDB_DOCKER_NAME="engapa/modeldb-frontend"
+- MDB_DOCKER_NAME_TAG="latest"
+- MDB_DOCKER_OPTS="-d"
 
 services:
 - docker
 
 script:
-- docker build --no-cache -t engapa/modeldb-frontend:latest -t engapa/modeldb-frontend:latest-dev${TAVIS_BUILD} .
+- ./launch.sh gen
+- ./launch.sh docker-build
+# TODO: docker-compose
+#- ./launch.sh docker-start
+#- if [[ $(docker ps -a -f "status=running" -f "name=$MDB_DOCKER_NAME" --format '{{.Names}}') != $MDB_DOCKER_NAME ]]; then
+#    echo "Container $MDB_DOCKER_NAME isn't running sucessfully, :-(";
+#    exit 1;
+#  fi
 
 after_success:
 - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker push engapa/modeldb-frontend:latest;
+    docker push $MDB_DOCKER_NAME:$MDB_DOCKER_NAME_TAG;
   fi
